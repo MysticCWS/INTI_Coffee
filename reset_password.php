@@ -6,14 +6,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>INTI Coffee | Reset Password</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>INTI Coffee | Login</title>
+        <link rel="icon" href="icon/titleicon.png" type="image/x-icon">
         
         <!-- Bootstrap 5 -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <!-- Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+        <!-- Bootstrap Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     </head>
     <body>
-        <header class="site-header position-absolute">
+        <header class="site-header text-center bg-light pt-3">
+            <img src="icon/titleicon.png" width="5%" alt="HeaderLogo"/>
             <h1>INTI Coffee</h1>
         </header>
         <div class="col-md-4 mx-auto py-5">
@@ -33,7 +41,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                     </div>
                 </div>
                 <div class="submit-verify">
-                    <button id="btnReset" class="btn-verify" type="submit">Reset Password</button>
+                    <button id="btnReset" class="btn btn-outline-success my-2 my-sm-0" type="submit">Reset Password</button>
                 </div>
             </form>
         </div>
