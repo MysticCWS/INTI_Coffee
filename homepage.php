@@ -48,20 +48,20 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         </header>
         
         <div class="col-md-6 mx-auto py-5">          
-            <div id="carouselExampleIndicators" class="carousel slide">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
-                <div class="carousel-inner">
+                <div class="carousel-inner" data-bs-interval="4000">
                   <div class="carousel-item active">
                     <img src="img/Promo1.jpeg" class="d-block w-100" alt="Promo 1">
                   </div>
-                  <div class="carousel-item">
+                  <div class="carousel-item" data-bs-interval="4000">
                     <img src="img/Promo2.jpg" class="d-block w-100" alt="Promo 2">
                   </div>
-                  <div class="carousel-item">
+                  <div class="carousel-item" data-bs-interval="4000">
                     <img src="img/Promo3.jpg" class="d-block w-100" alt="Promo 3">
                   </div>
                 </div>
