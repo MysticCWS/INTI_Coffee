@@ -7,7 +7,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>INTI Coffee | Home</title>
+        <title>INTI Coffee | About Us</title>
         <link rel="icon" href="icon/titleicon.png" type="image/x-icon">
         
         <!-- Bootstrap 5 -->
@@ -27,9 +27,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
             <nav class="navbar navbar-expand-lg bg-light">
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav my-auto">
-                        <li class="nav-item active h4"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item h4"><a class="nav-link" href="#">Home</a></li>
                         <li class="nav-item h4"><a class="nav-link" href="#">Order Tracker</a></li>
-                        <li class="nav-item h4"><a class="nav-link" href="#">About Us</a></li>
+                        <li class="nav-item active h4"><a class="nav-link" href="#">About Us</a></li>
                         <li class="nav-item h4">&nbsp;&nbsp;</li>
                     </ul>
                     <form class="form-inline d-flex h4">
@@ -48,35 +48,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         </header>
         
         <div class="col-md-6 mx-auto py-5">          
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner" data-bs-interval="4000">
-                    <div class="carousel-item active">
-                        <img src="img/Promo1.jpeg" class="d-block w-100" alt="Promo 1">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="4000">
-                        <img src="img/Promo2.jpg" class="d-block w-100" alt="Promo 2">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="4000">
-                        <img src="img/Promo3.jpg" class="d-block w-100" alt="Promo 3">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-        <div>
-            
+            <h3 class="text-center">About Us</h3>
+            <img src="img/AboutUs.jpg" class="d-block w-100 pt-2" alt="About Us">
+            <p class="text-center pt-2">
+                Wanna have some coffee in the morning but you are in a hurry? No problem! INTI Coffee makes it possible! <br>
+                We are using premium coffee beans to deliver the best taste coffee to you to kick start your day. We accept <br>
+                orders online here and start brewing your coffee while you are on the way to your class, office, or workplace. <br>
+                You can then track your order status from our website here to know that your coffee has been done yet. <br>
+                Most important, we deliver the coffee directly to your class, office, or workplace too, when it is done. <br>
+                You can select the delivery time based on your preferences either to deliver immediately or in a future time. <br>
+                We hope to make everyone's life easier and more energetic. Start by placing order <a href="homepage.php">here</a>!
+            </p>
         </div>
         
         <footer class="site-footer text-center bg-light pt-3 mt-auto">

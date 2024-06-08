@@ -7,7 +7,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>INTI Coffee | Login</title>
+        <title>INTI Coffee | Reset Password</title>
         <link rel="icon" href="icon/titleicon.png" type="image/x-icon">
         
         <!-- Bootstrap 5 -->
@@ -19,7 +19,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         <!-- Bootstrap Icons -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     </head>
-    <body>
+    <body class="d-flex flex-column min-vh-100">
         <header class="site-header text-center bg-light pt-3">
             <img src="icon/titleicon.png" width="5%" alt="HeaderLogo"/>
             <h1>INTI Coffee</h1>
@@ -45,5 +45,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                 </div>
             </form>
         </div>
+        
+        <footer class="site-footer text-center bg-light pt-3 mt-auto">
+            <h5>Contact Us</h5>
+            <p class="pt-2"><icon class="bi-envelope"> </icon><a href="mailto:inti.coffee@gmail.com">inti.coffee@gmail.com</a></p>
+            <p><icon class="bi-telephone"> </icon><a href="tel:+60164395329">+6016-4395329</a></p>
+            <p class="small">&copy;INTI Coffee 2024</p>
+        </footer>
     </body>
 </html>
