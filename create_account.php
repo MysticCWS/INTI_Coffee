@@ -7,7 +7,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>INTI Coffee | Login</title>
+        <title>INTI Coffee | Create Account</title>
         <link rel="icon" href="icon/titleicon.png" type="image/x-icon">
         
         <!-- Bootstrap 5 -->
@@ -28,7 +28,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
             <form id="loginForm" class="was-validated" action="">
                 <div class="row g-2 my-3 mx-2">
                     <div class="col-md">
-                        <h3>Login</h3>
+                        <h3>Create Account</h3>
+                    </div>
+                </div>
+                <div class="row g-2 my-3 mx-2">
+                    <div class="col-md">
+                        <div class="form-floating">
+                            <input id="accountName" class="form-control" type="text" name="accountName" placeholder="Account Name" value="" required="">
+                            <label for="name">Account Name</label>
+                        </div>
                     </div>
                 </div>
                 <div class="row g-2 my-3 mx-2">
@@ -49,14 +57,29 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                 </div>
                 <div class="row g-2 my-3 mx-2">
                     <div class="col-md">
+                        <div class="form-floating">
+                            <input id="loginConfirmPassword" class="form-control" type="password" name="password" placeholder="Password" value="" required="">
+                            <label for="name">Confirm Password</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-2 my-3 mx-2">
+                    <div class="col-md">
+                        <div class="form-floating">
+                            <input id="contact" class="form-control" type="text" name="contact" placeholder="Contact" value="" required="">
+                            <label for="name">Contact</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-2 my-3 mx-2">
+                    <div class="col-md">
                         <div class="forgot-password mt-10">
-                            <p>Forgotten your password? <a href="reset_password.php">Reset here</a></p>
-                            <p>Don't have an account yet? <a href="create_account.php">Create account</a></p>
+                            <p>Already have an account? <a href="login.php">Login</a></p>
                         </div>
                     </div>
                 </div>
                 <div class="submit-login">
-                    <button id="btnLogin" class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+                    <button id="btnCreate" class="btn btn-outline-success my-2 my-sm-0" type="submit">Create</button>
                 </div>
             </form>
         </div>
