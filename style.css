@@ -1,0 +1,22 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 26 Jun 2024, 13:45:45
+    Author     : User
+*/
+
+a:link { 
+  text-decoration: none; 
+  color: darkslategray;
+} 
+a:visited { 
+  text-decoration: none; 
+} 
+a:hover { 
+  text-decoration: underline; 
+} 
+a:active { 
+  text-decoration: none; 
+}
