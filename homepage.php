@@ -29,7 +29,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                     <ul class="navbar-nav my-auto">
                         <li class="nav-item active h4"><a class="nav-link" href="#">Home</a></li>
                         <li class="nav-item h4"><a class="nav-link" href="#">Order Tracker</a></li>
-                        <li class="nav-item h4"><a class="nav-link" href="#">About Us</a></li>
+                        <li class="nav-item h4"><a class="nav-link" href="about_us.php">About Us</a></li>
                         <li class="nav-item h4">&nbsp;&nbsp;</li>
                     </ul>
                     <form class="form-inline d-flex h4">
