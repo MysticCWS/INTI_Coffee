@@ -27,7 +27,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
             <nav class="navbar navbar-expand-lg bg-light">
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav my-auto">
-                        <li class="nav-item h4"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item h4"><a class="nav-link" href="homepage.php">Home</a></li>
                         <li class="nav-item h4"><a class="nav-link" href="#">Order Tracker</a></li>
                         <li class="nav-item active h4"><a class="nav-link" href="#">About Us</a></li>
                         <li class="nav-item h4">&nbsp;&nbsp;</li>
