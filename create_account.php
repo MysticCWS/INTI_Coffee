@@ -22,12 +22,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         <!-- Bootstrap Icons -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     </head>
-    <body class="d-flex flex-column min-vh-100">
+    <body class="d-flex flex-column min-vh-100 bg-light">
         <header class="site-header text-center bg-light pt-3">
             <img src="icon/titleicon.png" width="5%" alt="HeaderLogo"/>
             <h1>INTI Coffee</h1>
         </header>
-        <div class="col-md-4 mx-auto py-5">
+        <div class="col-md-4 mx-auto px-4 py-5 border rounded bg-white">
             <form id="loginForm" class="was-validated" action="">
                 <div class="row g-2 my-3 mx-2">
                     <div class="col-md">
