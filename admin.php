@@ -106,7 +106,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                             </ul>
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="edit_account.php">Admin: <?php echo $admin_data['admin_name']; ?><span class="bi-person" title="My Account"></span></a>
+                                    <a class="nav-link" href="admin_edit_account.php">Admin: <?php echo $admin_data['admin_name']; ?><span class="bi-person" title="My Account"></span></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="logoutadmin.php"><span class="bi-power" title="Logout"></span></a>
