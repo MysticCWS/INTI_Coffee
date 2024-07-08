@@ -3,25 +3,25 @@
 session_start();
 
     include("connection.php");
-    include("function.php");
+    include("functionAdmin.php");
     
-    $user_data = check_login($con);
+    $admin_data = check_login($con);
     
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         //Something was posted
-        $user_name = $_POST['user_name'];
-        $user_email = $_POST['user_email'];
-        $user_contact = $_POST['user_contact'];
+        $admin_name = $_POST['admin_name'];
+        $admin_email = $_POST['admin_email'];
+        $admin_contact = $_POST['admin_contact'];
         
-        $user_id = $user_data['user_id'];
+        $admin_id = $admin_data['user_id'];
         
-        if(!empty($user_name) && !empty($user_email) && !empty($user_contact)){
+        if(!empty($admin_name) && !empty($admin_email) && !empty($admin_contact)){
             //Save into database
-            $edit_query = "update user set user_name='$user_name', user_email='$user_email', user_contact='$user_contact' where user_id='$user_id'";
+            $edit_admin_query = "update admin set admin_name='$admin_name', admin_email='$admin_email', admin_contact='$admin_contact' where admin_id='$admin_id'";
             
-            mysqli_query($con, $edit_query);
+            mysqli_query($con, $edit_admin_query);
             
-            header("Location: homepage.php");
+            header("Location: admin.php");
             die;
         }else{
             echo "Please enter all information.";
@@ -39,7 +39,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>INTI Coffee | Edit Account</title>
+        <title>INTI Coffee | Admin Edit Account</title>
         <link rel="icon" href="icon/titleicon.png" type="image/x-icon">
         
         <!-- CSS -->
@@ -61,16 +61,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                 <h1>INTI Coffee</h1>
             </header>
             <div class="col-md-4 mx-auto px-4 py-5 border rounded bg-white">
-                <form id="editForm" class="was-validated" method="POST">
+                <form id="adminEditForm" class="was-validated" method="POST">
                     <div class="row g-2 my-3 mx-2">
                         <div class="col-md">
-                            <h3>Edit Account</h3>
+                            <h3>Admin Edit Account</h3>
                         </div>
                     </div>
                     <div class="row g-2 my-3 mx-2">
                         <div class="col-md">
                             <div class="form-floating">
-                                <input id="accountName" class="form-control" type="text" name="user_name" placeholder="Account Name" value="<?php echo $user_data['user_name']; ?>" required="">
+                                <input id="accountName" class="form-control" type="text" name="admin_name" placeholder="Account Name" value="<?php echo $admin_data['admin_name']; ?>" required="">
                                 <label for="name">Account Name</label>
                             </div>
                         </div>
@@ -78,7 +78,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                     <div class="row g-2 my-3 mx-2">
                         <div class="col-md">
                             <div class="form-floating">
-                                <input id="loginEmail" class="form-control" type="text" name="user_email" placeholder="Email" value="<?php echo $user_data['user_email']; ?>" required="">
+                                <input id="loginEmail" class="form-control" type="text" name="admin_email" placeholder="Email" value="<?php echo $admin_data['admin_email']; ?>" required="">
                                 <label for="name">Email</label>
                             </div>
                         </div>
@@ -86,7 +86,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                     <div class="row g-2 my-3 mx-2">
                         <div class="col-md">
                             <div class="form-floating">
-                                <input id="contact" class="form-control" type="text" name="user_contact" placeholder="Contact" value="<?php echo $user_data['user_contact']; ?>" required="">
+                                <input id="contact" class="form-control" type="text" name="admin_contact" placeholder="Contact" value="<?php echo $admin_data['admin_contact']; ?>" required="">
                                 <label for="name">Contact</label>
                             </div>
                         </div>

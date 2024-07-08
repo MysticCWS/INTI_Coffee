@@ -1,6 +1,41 @@
 <?php
 
-
+    session_start();
+    
+    include("connection.php");
+    include("function.php");
+    
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        //Something was posted
+        $user_email = $_POST['user_email'];
+        $user_password = $_POST['user_password'];
+        
+        if(!empty($user_email) && !empty($user_password)){
+            //Read from database
+            $query = "select * from user where user_email = '$user_email' limit 1";
+            $result = mysqli_query($con, $query);
+            
+            if($result){
+                if($result && mysqli_num_rows($result) > 0){
+                    $user_data = mysqli_fetch_assoc($result);
+                    
+                    if($user_data['user_password'] === $user_password){
+                        $_SESSION['user_id'] = $user_data['user_id'];
+                        header("Location: homepage.php");
+                        die;
+                    } else {
+                        echo "Wrong email or password.";
+                    }
+                } else {
+                    echo "Wrong email or password.";
+                }
+            } else {
+                echo "Wrong email or password.";
+            }            
+        } else {
+            echo "Wrong email or password.";
+        }
+    }
 
 ?>
 
@@ -29,52 +64,53 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     </head>
     <body class="d-flex flex-column min-vh-100 bg-light">
-        <header class="site-header text-center bg-light pt-3">
-            <img src="icon/titleicon.png" width="5%" alt="HeaderLogo"/>
-            <h1>INTI Coffee</h1>
-        </header>
-        <div class="col-md-4 mx-auto px-4 py-5 border rounded bg-white">
-            <form id="loginForm" class="was-validated" action="">
-                <div class="row g-2 my-3 mx-2">
-                    <div class="col-md">
-                        <h3>Login</h3>
-                    </div>
-                </div>
-                <div class="row g-2 my-3 mx-2">
-                    <div class="col-md">
-                        <div class="form-floating">
-                            <input id="loginEmail" class="form-control" type="text" name="email" placeholder="Email" value="" required="">
-                            <label for="name">Email</label>
+        <div class="container">
+            <header class="site-header text-center bg-light pt-3">
+                <img src="icon/titleicon.png" width="5%" alt="HeaderLogo"/>
+                <h1>INTI Coffee</h1>
+            </header>
+            <div class="col-md-4 mx-auto px-4 py-5 border rounded bg-white">
+                <form id="loginForm" class="was-validated" method="POST">
+                    <div class="row g-2 my-3 mx-2">
+                        <div class="col-md">
+                            <h3>Login</h3>
                         </div>
                     </div>
-                </div>
-                <div class="row g-2 my-3 mx-2">
-                    <div class="col-md">
-                        <div class="form-floating">
-                            <input id="loginPassword" class="form-control" type="password" name="password" placeholder="Password" value="" required="">
-                            <label for="name">Password</label>
+                    <div class="row g-2 my-3 mx-2">
+                        <div class="col-md">
+                            <div class="form-floating">
+                                <input id="loginEmail" class="form-control" type="text" name="user_email" placeholder="Email" value="" required="">
+                                <label for="name">Email</label>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row g-2 my-3 mx-2">
-                    <div class="col-md">
-                        <div class="forgot-password mt-10">
-                            <p>Forgotten your password? <a href="reset_password.php">Reset here</a></p>
-                            <p>Don't have an account yet? <a href="create_account.php">Create account</a></p>
+                    <div class="row g-2 my-3 mx-2">
+                        <div class="col-md">
+                            <div class="form-floating">
+                                <input id="loginPassword" class="form-control" type="password" name="user_password" placeholder="Password" value="" required="">
+                                <label for="name">Password</label>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="submit-login">
-                    <button id="btnLogin" class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
-                </div>
-            </form>
+                    <div class="row g-2 my-3 mx-2">
+                        <div class="col-md">
+                            <div class="forgot-password mt-10">
+                                <p>Don't have an account yet? <a href="create_account.php">Create account</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submit-login">
+                        <button id="btnLogin" class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+                    </div>
+                </form>
+            </div>
+
+            <footer class="site-footer text-center bg-light pt-3 mt-auto">
+                <h5>Contact Us</h5>
+                <p class="pt-2"><icon class="bi-envelope"> </icon><a href="mailto:inti.coffee@gmail.com">inti.coffee@gmail.com</a></p>
+                <p><icon class="bi-telephone"> </icon><a href="tel:+60164395329">+6016-4395329</a></p>
+                <p class="small">&copy;INTI Coffee 2024</p>
+            </footer>
         </div>
-        
-        <footer class="site-footer text-center bg-light pt-3 mt-auto">
-            <h5>Contact Us</h5>
-            <p class="pt-2"><icon class="bi-envelope"> </icon><a href="mailto:inti.coffee@gmail.com">inti.coffee@gmail.com</a></p>
-            <p><icon class="bi-telephone"> </icon><a href="tel:+60164395329">+6016-4395329</a></p>
-            <p class="small">&copy;INTI Coffee 2024</p>
-        </footer>
     </body>
 </html>

@@ -1,30 +1,39 @@
 <?php
 
-session_start();
-
+    session_start();
+    
     include("connection.php");
     include("function.php");
     
-    $user_data = check_login($con);
-    
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         //Something was posted
-        $user_name = $_POST['user_name'];
-        $user_email = $_POST['user_email'];
-        $user_contact = $_POST['user_contact'];
+        $admin_email = $_POST['admin_email'];
+        $admin_password = $_POST['admin_password'];
         
-        $user_id = $user_data['user_id'];
-        
-        if(!empty($user_name) && !empty($user_email) && !empty($user_contact)){
-            //Save into database
-            $edit_query = "update user set user_name='$user_name', user_email='$user_email', user_contact='$user_contact' where user_id='$user_id'";
+        if(!empty($admin_email) && !empty($admin_password)){
+            //Read from database
+            $query = "select * from admin where admin_email = '$admin_email' limit 1";
+            $result = mysqli_query($con, $query);
             
-            mysqli_query($con, $edit_query);
-            
-            header("Location: homepage.php");
-            die;
-        }else{
-            echo "Please enter all information.";
+            if($result){
+                if($result && mysqli_num_rows($result) > 0){
+                    $admin_data = mysqli_fetch_assoc($result);
+                    
+                    if($admin_data['admin_password'] === $admin_password){
+                        $_SESSION['user_id'] = $admin_data['admin_id'];
+                        header("Location: admin.php");
+                        die;
+                    } else {
+                        echo "Wrong email or password.";
+                    }
+                } else {
+                    echo "Wrong email or password.";
+                }
+            } else {
+                echo "Wrong email or password.";
+            }            
+        } else {
+            echo "Wrong email or password.";
         }
     }
 
@@ -39,7 +48,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>INTI Coffee | Edit Account</title>
+        <title>INTI Coffee | Admin Login</title>
         <link rel="icon" href="icon/titleicon.png" type="image/x-icon">
         
         <!-- CSS -->
@@ -61,24 +70,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                 <h1>INTI Coffee</h1>
             </header>
             <div class="col-md-4 mx-auto px-4 py-5 border rounded bg-white">
-                <form id="editForm" class="was-validated" method="POST">
+                <form id="adminLoginForm" class="was-validated" method="POST">
                     <div class="row g-2 my-3 mx-2">
                         <div class="col-md">
-                            <h3>Edit Account</h3>
+                            <h3>Admin Login</h3>
                         </div>
                     </div>
                     <div class="row g-2 my-3 mx-2">
                         <div class="col-md">
                             <div class="form-floating">
-                                <input id="accountName" class="form-control" type="text" name="user_name" placeholder="Account Name" value="<?php echo $user_data['user_name']; ?>" required="">
-                                <label for="name">Account Name</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row g-2 my-3 mx-2">
-                        <div class="col-md">
-                            <div class="form-floating">
-                                <input id="loginEmail" class="form-control" type="text" name="user_email" placeholder="Email" value="<?php echo $user_data['user_email']; ?>" required="">
+                                <input id="loginEmail" class="form-control" type="text" name="admin_email" placeholder="Email" value="" required="">
                                 <label for="name">Email</label>
                             </div>
                         </div>
@@ -86,13 +87,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                     <div class="row g-2 my-3 mx-2">
                         <div class="col-md">
                             <div class="form-floating">
-                                <input id="contact" class="form-control" type="text" name="user_contact" placeholder="Contact" value="<?php echo $user_data['user_contact']; ?>" required="">
-                                <label for="name">Contact</label>
+                                <input id="loginPassword" class="form-control" type="password" name="admin_password" placeholder="Password" value="" required="">
+                                <label for="name">Password</label>
                             </div>
                         </div>
                     </div>
                     <div class="submit-login">
-                        <button id="btnEdit" class="btn btn-outline-success my-2 my-sm-0" type="submit">Edit</button>
+                        <button id="btnLogin" class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
                     </div>
                 </form>
             </div>
